@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bread｜專職字幕師 — 字幕後製外包 · 幫剪輯師省下字幕後製時間</title>
+  <meta name="description" content="專職字幕師 Bread 提供專業字幕後製外包服務。包含人工文字校對、自然斷句、時間軸精修與 SRT/TXT 多格式交付。第一次合作免費試做 5 分鐘！">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              900: '#4c1d95',
+            },
+            accent: {
+              400: '#38bdf8',
+              500: '#06b6d4',
+            },
+            surface: {
+              dark: '#0b0f19',
+              card: '#111827',
+              muted: '#1f293d',
+              border: '#2e3a52'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-surface-dark text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface-dark/80 backdrop-blur-md border-b border-surface-border/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-500 flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300">
+          <!-- Custom SVG Subtitle Logo -->
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-white block leading-none">Bread</span>
+          <span class="text-xs font-medium text-brand-500 tracking-wider uppercase">專職字幕師</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#painpoints" class="hover:text-brand-500 transition-colors">痛點解決</a>
+        <a href="#services" class="hover:text-brand-500 transition-colors">核心服務</a>
+        <a href="#pricing" class="hover:text-brand-500 transition-colors">計費與保障</a>
+        <a href="#trial" class="hover:text-brand-500 transition-colors">免費試做</a>
+      </nav>
+
+      <!-- CTA Header Button -->
+      <a href="#contact" class="hidden sm:inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-600 text-white font-medium text-sm shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all duration-300 hover:-translate-y-0.5">
+        <span>發案聯繫</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <!-- Background Glow Gradient -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-accent-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-muted border border-surface-border text-brand-500 text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+            【接案】字幕後製外包服務
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
+            幫剪輯師省下 <br class="hidden sm:inline"/>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-500 via-accent-400 to-emerald-400">
+              寶貴的字幕後製時間
+            </span>
+          </h1>
+
+          <!-- Intro Paragraph -->
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            大家好，我是 <strong class="text-white font-semibold">Bread</strong>，專職字幕師。<br>
+            如果你是剪輯師、YouTuber 或接案團隊，應該很熟悉：<br class="hidden sm:inline">
+            <span class="text-slate-200 font-medium">「影片剪完了，字幕卻還沒完。」</span>
+          </p>
+
+          <p class="text-sm sm:text-base text-slate-400 max-w-xl mx-auto lg:mx-0">
+            把繁瑣吃時的字幕校對與時間軸擺脫，把時間留給剪輯、企劃與下一個案子。
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#trial" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 hover:opacity-95 text-white font-bold text-base shadow-xl shadow-brand-500/25 transition-all duration-300 hover:-translate-y-0.5">
+              <svg class="w-5 h-5 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 13C10.832 21 8.5 20 8.5 19c0-1.838 2.332-2.5 3.5-3 1.168.5 3.5 1.162 3.5 3 0 1-2.332 2-3.5 2z"/>
+              </svg>
+              <span>免費試做 5 分鐘</span>
+            </a>
+
+            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-surface-muted hover:bg-surface-border text-slate-200 hover:text-white font-semibold text-base border border-surface-border transition-all duration-300">
+              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <span>發案聯繫方式</span>
+            </a>
+          </div>
+
+          <!-- Highlight metrics -->
+          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-surface-border/60 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <span class="block text-2xl font-bold text-white">100%</span>
+              <span class="text-xs text-slate-400">人工文字精準校對</span>
+            </div>
+            <div>
+              <span class="block text-2xl font-bold text-emerald-400">5 分鐘</span>
+              <span class="text-xs text-slate-400">首刷免費體驗</span>
+            </div>
+            <div>
+              <span class="block text-2xl font-bold text-accent-400">0 加價</span>
+              <span class="text-xs text-slate-400">確認報價絕不上調</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Visual Mockup (Interactive Subtitle Comparison Widget) -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl bg-surface-card border border-surface-border p-5 shadow-2xl shadow-black/50">
+            
+            <!-- Window Bar -->
+            <div class="flex items-center justify-between border-b border-surface-border/80 pb-3 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Subtitle_Editor_Preview.timeline</span>
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-500/20 text-brand-400 font-medium">NLE Ready</span>
+            </div>
+
+            <!-- Waveform Mockup Header -->
+            <div class="space-y-4">
+              <!-- Audio Waveform Visual -->
+              <div class="bg-surface-dark p-3 rounded-xl border border-surface-border/60 space-y-2">
+                <div class="flex items-center justify-between text-xs text-slate-400 font-mono">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                    </svg>
+                    <span>AUDIO WAVEFORM (00:01:24:12)</span>
+                  </div>
+                  <span class="text-emerald-400">SYNC OK</span>
+                </div>
+
+                <!-- Waveform Bars -->
+                <div class="h-10 flex items-center justify-between gap-1 px-1">
+                  <div class="w-1 bg-brand-500/40 h-4 rounded"></div>
+                  <div class="w-1 bg-brand-500/60 h-7 rounded"></div>
+                  <div class="w-1 bg-brand-500 h-9 rounded"></div>
+                  <div class="w-1 bg-brand-500 h-5 rounded"></div>
+                  <div class="w-1 bg-brand-500/50 h-3 rounded"></div>
+                  <div class="w-1 bg-accent-500 h-8 rounded"></div>
+                  <div class="w-1 bg-accent-500 h-10 rounded"></div>
+                  <div class="w-1 bg-accent-500 h-6 rounded"></div>
+                  <div class="w-1 bg-brand-500 h-9 rounded"></div>
+                  <div class="w-1 bg-brand-500 h-4 rounded"></div>
+                  <div class="w-1 bg-brand-500/30 h-2 rounded"></div>
+                  <div class="w-1 bg-brand-500/70 h-7 rounded"></div>
+                  <div class="w-1 bg-brand-500 h-10 rounded"></div>
+                  <div class="w-1 bg-brand-500 h-6 rounded"></div>
+                  <div class="w-1 bg-accent-500 h-8 rounded"></div>
+                  <div class="w-1 bg-accent-500 h-4 rounded"></div>
+                  <div class="w-1 bg-brand-500/40 h-3 rounded"></div>
+                </div>
+              </div>
+
+              <!-- Comparison Tabs -->
+              <div class="space-y-3">
+                <!-- AI Output (Problem) -->
+                <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 space-y-1.5">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold text-rose-400 flex items-center gap-1.5">
+                      <svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                      </svg>
+                      未修 AI 字幕：斷句碎片化、錯字
+                    </span>
+                    <span class="text-[10px] font-mono text-rose-400/80">00:01:24:05</span>
+                  </div>
+                  <p class="text-xs font-mono text-rose-200 line-through decoration-rose-500/60 bg-rose-950/40 p-2 rounded border border-rose-500/20">
+                    「今天我們要來介紹這款皮卡丘…不是是皮卡丘的造型耳機」
+                  </p>
+                </div>
+
+                <!-- Bread Fixed (Solution) -->
+                <div class="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 space-y-1.5 shadow-lg">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
+                      <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      Bread 人工精修：順暢語意與精準波形
+                    </span>
+                    <span class="text-[10px] font-mono text-emerald-400/80">00:01:24:12</span>
+                  </div>
+                  <p class="text-xs font-mono text-emerald-200 bg-emerald-950/40 p-2 rounded border border-emerald-500/20 font-medium">
+                    「今天我們要來介紹這款皮卡丘造型耳機。」
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Features Footer Tags -->
+            <div class="mt-4 pt-3 border-t border-surface-border/60 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1">
+                <svg class="w-3.5 h-3.5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                可直入 Premiere / DaVinci
+              </span>
+              <span class="font-mono text-[11px] text-slate-400">SRT / TXT / Custom</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Pain Points Section (Why AI Subtitles Need Human Refinement) -->
+  <section id="painpoints" class="py-20 bg-surface-card/50 border-y border-surface-border/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <h2 class="text-xs font-bold text-brand-500 tracking-wider uppercase">PAIN POINTS vs SOLUTION</h2>
+        <p class="text-2xl sm:text-3xl font-bold text-white">
+          AI 雖然快，但產出後的「後續整理」往往最吃時間
+        </p>
+        <p class="text-slate-400 text-sm sm:text-base">
+          自動語音辨識產出後，還是得自己花好幾個小時做以下這堆瑣事：
+        </p>
+      </div>
+
+      <!-- Grid Comparison -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- Left: Pain Points -->
+        <div class="rounded-2xl bg-surface-card border border-rose-500/20 p-6 sm:p-8 space-y-6">
+          <div class="flex items-center gap-3 pb-4 border-b border-surface-border">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white">AI 字幕產出後的難題</h3>
+              <p class="text-xs text-rose-400">自己動手修正，白白耗費無數小時</p>
+            </div>
+          </div>
+
+          <ul class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </div>
+              <div>
+                <strong class="text-white block font-medium">抓錯字</strong>
+                同音字辨識錯誤（如「的/得」、「在/再」），需要耗時眼力校對。
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </div>
+              <div>
+                <strong class="text-white block font-medium">修正人名、專有名詞</strong>
+                品牌名、專業術語或嘉賓人名經常無法精準識別。
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </div>
+              <div>
+                <strong class="text-white block font-medium">整理奇怪的斷句</strong>
+                字幕過碎或切在奇怪語意位置，影響閱讀節奏。
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </div>
+              <div>
+                <strong class="text-white block font-medium">一條條調整時間軸與最後檢查</strong>
+                需要拉波形微調進出場點，最後再從頭播放檢查一次。
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Bread Solution -->
+        <div class="rounded-2xl bg-surface-card border border-emerald-500/30 p-6 sm:p-8 space-y-6 shadow-xl relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 w-36 h-36 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <div class="flex items-center gap-3 pb-4 border-b border-surface-border">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white">直接交給 Bread 專職字幕師</h3>
+              <p class="text-xs text-emerald-400">完整包辦後製，交件直接導進流程</p>
+            </div>
+          </div>
+
+          <ul class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <strong class="text-white block font-medium">人工文字校對</strong>
+                修正錯字、人名、專有名詞與辨識錯誤。
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <strong class="text-white block font-medium">自然斷句</strong>
+                依照語意與說話節奏整理，避免字幕過碎或切在奇怪的位置。
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <strong class="text-white block font-medium">時間軸精修</strong>
+                依照實際語音與波形調整，完成後可直接接進剪輯流程。
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <strong class="text-white block font-medium">SRT／TXT 交付</strong>
+                可用於 YouTube、Premiere、剪映、DaVinci 等工作流程。有自己的字幕格式或製作規則，也可以直接提供，我會依照你的規範製作。
+              </div>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Core Services Section -->
+  <section id="services" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <h2 class="text-xs font-bold text-brand-500 tracking-wider uppercase">SERVICES & FEATURES</h2>
+        <p class="text-2xl sm:text-4xl font-extrabold text-white">
+          專業字幕後製服務特色
+        </p>
+        <p class="text-slate-400 text-sm sm:text-base">
+          為剪輯師打造一步到位的字幕交付體驗
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="rounded-2xl bg-surface-card border border-surface-border p-6 space-y-4 hover:border-brand-500/50 hover:shadow-lg hover:shadow-brand-500/10 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <!-- Icon: Proofread -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">人工文字校對</h3>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+            修正錯字、人名、專有名詞與語音辨識錯誤，確保文字正確無誤。
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="rounded-2xl bg-surface-card border border-surface-border p-6 space-y-4 hover:border-accent-500/50 hover:shadow-lg hover:shadow-accent-500/10 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-accent-500/10 text-accent-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <!-- Icon: Natural Break -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">自然語意斷句</h3>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+            依照語意與說話節奏整理，避免字幕過碎或切在奇怪的位置。
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="rounded-2xl bg-surface-card border border-surface-border p-6 space-y-4 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <!-- Icon: Timeline -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">時間軸精修對齊</h3>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+            依照實際語音與波形調整，完成後可直接接進剪輯流程。
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="rounded-2xl bg-surface-card border border-surface-border p-6 space-y-4 hover:border-brand-500/50 hover:shadow-lg hover:shadow-brand-500/10 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <!-- Icon: File Export -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">SRT / TXT 交付</h3>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+            可用於 YouTube、Premiere、剪映、DaVinci 等，亦可配合客製規範。
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Workflows & Software Supported -->
+      <div class="mt-16 rounded-2xl bg-surface-card border border-surface-border p-6 sm:p-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-1 text-center md:text-left">
+            <h4 class="text-base font-bold text-white">支援主流工作流程與剪輯軟體</h4>
+            <p class="text-xs text-slate-400">有自己的字幕格式或製作規則，也可以直接提供，我會依照你的規範製作</p>
+          </div>
+
+          <!-- Software Badges -->
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <span class="px-4 py-2 rounded-xl bg-surface-muted border border-surface-border text-xs font-semibold text-slate-200 flex items-center gap-2">
+              <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              YouTube CC
+            </span>
+
+            <span class="px-4 py-2 rounded-xl bg-surface-muted border border-surface-border text-xs font-semibold text-slate-200 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+              Premiere
+            </span>
+
+            <span class="px-4 py-2 rounded-xl bg-surface-muted border border-surface-border text-xs font-semibold text-slate-200 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+              剪映
+            </span>
+
+            <span class="px-4 py-2 rounded-xl bg-surface-muted border border-surface-border text-xs font-semibold text-slate-200 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              DaVinci
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Pricing & Guarantee Section -->
+  <section id="pricing" class="py-20 bg-surface-card/50 border-t border-surface-border/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Pricing Card -->
+        <div class="lg:col-span-6 rounded-2xl bg-surface-card border border-surface-border p-8 space-y-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-semibold">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              透明報價說明
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white">收費標準</h3>
+            
+            <div class="py-4 border-y border-surface-border/60">
+              <div class="flex items-baseline gap-2">
+                <span class="text-sm text-slate-400">NT$</span>
+                <span class="text-4xl sm:text-5xl font-extrabold text-white">30</span>
+                <span class="text-slate-400 font-medium">／ 分鐘起</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                依影片長度、內容難度、語言及交期報價。
+              </p>
+            </div>
+
+            <ul class="space-y-3 text-sm text-slate-300 pt-2">
+              <li class="flex items-center gap-3">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>報價確認後才開始製作</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>確認多少就是多少，不會事後任意加價</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#contact" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-muted hover:bg-surface-border border border-surface-border text-white text-sm font-semibold transition-all">
+            <span>免費估價諮詢</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Guarantee Card -->
+        <div class="lg:col-span-6 rounded-2xl bg-gradient-to-br from-surface-card via-surface-card to-brand-950/20 border border-brand-500/30 p-8 space-y-6 flex flex-col justify-between shadow-xl">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center">
+              <!-- SVG Shield/Wrench Responsibilities Icon -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white">對成品負責</h3>
+            
+            <p class="text-slate-300 text-sm leading-relaxed">
+              交件後若發現是我的製作錯誤：<br>
+              <strong class="text-emerald-400 font-semibold text-base block mt-1">「錯誤部分不收費，並免費修正。」</strong>
+            </p>
+
+            <div class="p-4 rounded-xl bg-surface-dark/80 border border-brand-500/20 space-y-2">
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                我希望合作不是「交出去就結束」，而是確實把字幕做到最好。
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-border/60 flex items-center gap-3 text-xs text-slate-400">
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>安心保障，售後修正迅速</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Free Trial 5-Minute Section -->
+  <section id="trial" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="rounded-3xl bg-gradient-to-r from-brand-900/60 via-surface-card to-accent-950/40 border border-brand-500/40 p-8 sm:p-12 shadow-2xl relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/20 text-brand-300 text-xs font-bold uppercase tracking-wider border border-brand-500/30">
+              <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 13C10.832 21 8.5 20 8.5 19c0-1.838 2.332-2.5 3.5-3 1.168.5 3.5 1.162 3.5 3 0 1-2.332 2-3.5 2z"/>
+              </svg>
+              第一次合作獨享
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+              第一次合作 ｜ <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-accent-400">免費試做 5分鐘</span>
+            </h2>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              先不用把整支影片交給我。提供一支影片，我免費製作前 5分鐘，讓你直接確認：
+            </p>
+
+            <!-- 4 Checkpoints -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-dark/60 border border-surface-border text-xs text-slate-200">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>文字準不準</span>
+              </div>
+              <div class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-dark/60 border border-surface-border text-xs text-slate-200">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>斷句順不順</span>
+              </div>
+              <div class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-dark/60 border border-surface-border text-xs text-slate-200">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>時間軸是否符合需求</span>
+              </div>
+              <div class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-dark/60 border border-surface-border text-xs text-slate-200">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>能不能直接接進你的工作流程</span>
+              </div>
+            </div>
+
+            <p class="text-xs text-brand-300 font-medium pt-1">
+              先看成果，再決定要不要合作。
+            </p>
+          </div>
+
+          <div class="lg:col-span-5 flex justify-center">
+            <a href="#contact" class="w-full sm:w-auto inline-flex flex-col items-center justify-center px-8 py-7 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-bold shadow-2xl shadow-brand-500/30 transition-all hover:scale-105 group text-center">
+              <span class="text-xl">立即發案免費試做</span>
+              <span class="text-xs text-brand-200 font-normal mt-1 flex items-center gap-1">
+                提供影片連結即可開始 
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Contact & Workflow Section -->
+  <section id="contact" class="py-24 bg-surface-card/60 border-t border-surface-border/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <h2 class="text-xs font-bold text-brand-500 tracking-wider uppercase">CONTACT & WORKFLOW</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white">
+          發案方式
+        </p>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Email、LINE 都可以直接發案
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Requirements Checklist -->
+        <div class="lg:col-span-6 rounded-2xl bg-surface-card border border-surface-border p-6 sm:p-8 space-y-6">
+          <div class="flex items-center gap-3 pb-4 border-b border-surface-border">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white">發案請提供：</h3>
+              <p class="text-xs text-slate-400">準備好以下資訊即可發送訊息</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-dark border border-surface-border/60">
+              <span class="w-7 h-7 rounded-lg bg-brand-500/20 text-brand-400 font-mono font-bold text-sm flex items-center justify-center shrink-0">①</span>
+              <div>
+                <strong class="text-white block text-sm font-semibold">影片／音檔連結</strong>
+                <p class="text-xs text-slate-400">雲端硬碟、YouTube 不公開連結或檔案下載點。</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-dark border border-surface-border/60">
+              <span class="w-7 h-7 rounded-lg bg-brand-500/20 text-brand-400 font-mono font-bold text-sm flex items-center justify-center shrink-0">②</span>
+              <div>
+                <strong class="text-white block text-sm font-semibold">預計交件日期</strong>
+                <p class="text-xs text-slate-400">標記您期望收到字幕檔案的時間節點。</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-dark border border-surface-border/60">
+              <span class="w-7 h-7 rounded-lg bg-brand-500/20 text-brand-400 font-mono font-bold text-sm flex items-center justify-center shrink-0">③</span>
+              <div>
+                <strong class="text-white block text-sm font-semibold">特殊製作需求（如有）</strong>
+                <p class="text-xs text-slate-400">如特定字幕格式規範、標點符號使用習慣等。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Cards with One-Click Copy -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- Email Card -->
+          <div class="rounded-2xl bg-surface-card border border-surface-border p-6 space-y-4 hover:border-brand-500/40 transition-all">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 font-medium">Email 信箱</span>
+                  <p class="text-base font-bold text-white font-mono">sdingerscat@gmail.com</p>
+                </div>
+              </div>
+
+              <button onclick="copyToClipboard('sdingerscat@gmail.com', 'Email 已複製！')" class="px-4 py-2 rounded-xl bg-surface-muted hover:bg-surface-border border border-surface-border text-xs font-semibold text-slate-200 flex items-center gap-1.5 transition-all">
+                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                <span>複製</span>
+              </button>
+            </div>
+            
+            <a href="mailto:sdingerscat@gmail.com" class="block w-full py-2.5 rounded-xl bg-surface-dark text-center text-xs font-medium text-slate-300 hover:text-white hover:bg-surface-border transition-colors">
+              開啟郵件軟體發送 →
+            </a>
+          </div>
+
+          <!-- LINE Card -->
+          <div class="rounded-2xl bg-surface-card border border-surface-border p-6 space-y-4 hover:border-emerald-500/40 transition-all">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                  <!-- LINE Custom Vector Icon -->
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.21 3.55 7.73 8.35 8.36.33.07.77.21.88.49.1.25.07.64.03.9-.06.39-.28 1.5-.32 1.83-.06.51.24.5.5.33.26-.17 4.12-2.43 5.63-4.16C19.8 16.03 22 13.48 22 10.5 22 5.82 17.52 2 12 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 font-medium">LINE ID</span>
+                  <p class="text-base font-bold text-white font-mono">@712xnlob</p>
+                </div>
+              </div>
+
+              <button onclick="copyToClipboard('@712xnlob', 'LINE ID 已複製！')" class="px-4 py-2 rounded-xl bg-surface-muted hover:bg-surface-border border border-surface-border text-xs font-semibold text-slate-200 flex items-center gap-1.5 transition-all">
+                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                <span>複製 ID</span>
+              </button>
+            </div>
+
+            <div class="p-3 rounded-xl bg-surface-dark text-xs text-slate-400 text-center">
+              請搜尋 LINE ID（包含 @ 符號）即可加好友發案
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Closing Slogan & Footer -->
+  <footer class="py-16 bg-surface-dark border-t border-surface-border text-center">
+    <div class="max-w-4xl mx-auto px-4 space-y-6">
+      
+      <div class="space-y-2">
+        <p class="text-base sm:text-lg text-slate-300">
+          如果你正在找一個可以穩定接手字幕後製的合作夥伴，歡迎找我。
+        </p>
+        <p class="text-lg sm:text-xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-accent-400 to-emerald-400">
+          把字幕後製交給我，把時間留給剪輯、企劃與下一個案子。
+        </p>
+      </div>
+
+      <div class="pt-8 border-t border-surface-border/50 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div>
+          <strong class="text-white font-semibold">Bread｜專職字幕師</strong> &copy; 2026. All rights reserved.
+        </div>
+        <div class="flex items-center gap-4 text-slate-400">
+          <span>SRT / TXT 字幕後製外包</span>
+          <span>•</span>
+          <span>5 分鐘免費試做</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="px-5 py-3 rounded-xl bg-brand-600 text-white font-medium text-sm shadow-xl flex items-center gap-2 border border-brand-400/40">
+      <svg class="w-5 h-5 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+      </svg>
+      <span id="toast-msg">已複製！</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
