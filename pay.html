@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>付款－Bread 專業字幕製作</title>
+<!-- 付款連結的客人頁（放在 breadilized/bread-subtitle 的 GitHub Pages）。
+     網址 pay.html#<連結編號>：向後端拿狀態與當下加密的藍新表單，直接送去藍新。後端：Evosub app/routers/paylink.py -->
+<style>
+*{box-sizing:border-box}[hidden]{display:none!important}
+:root{--bg:#f5f5f4;--card:#fff;--ink:#18181b;--sub:#71717a;--line:#e4e4e7;--btn:#18181b;--btnink:#fff;--ok:#15803d;--warn:#b45309}
+@media (prefers-color-scheme:dark){:root{--bg:#0c0c0d;--card:#18181b;--ink:#f4f4f5;--sub:#a1a1aa;--line:#2a2a2e;--btn:#f4f4f5;--btnink:#18181b;--ok:#4ade80;--warn:#fbbf24}}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "Noto Sans TC",-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+.wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+.card{width:100%;max-width:400px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 24px}
+.store{font-size:13px;color:var(--sub)}
+h1{font-size:18px;font-weight:600;margin:6px 0 18px;word-break:break-word}
+.amt{font-size:34px;font-weight:600;margin:0 0 18px;font-variant-numeric:tabular-nums}
+.amt small{font-size:15px;font-weight:500;color:var(--sub);margin-right:6px}
+dl{margin:0 0 22px;border-top:1px solid var(--line)}
+dl div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+dt{color:var(--sub)}dd{margin:0;text-align:right}
+button{width:100%;height:46px;border:0;border-radius:10px;background:var(--btn);color:var(--btnink);font:inherit;font-weight:600;cursor:pointer}
+button:disabled{opacity:.5;cursor:default}
+.note{font-size:12.5px;color:var(--sub);margin:12px 0 0;text-align:center}
+.st{font-size:16px;font-weight:600;margin:0 0 6px}.st.ok{color:var(--ok)}.st.warn{color:var(--warn)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;border:1px solid var(--warn);color:var(--warn);margin-left:6px}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card" id="card"><div class="store">Bread 專業字幕製作</div><p class="note" style="text-align:left">載入中</p></div></div>
+<script>
+'use strict';
+const API = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? 'https://evosub-staging-779839823660.asia-east1.run.app' : 'https://api.evosub.ai';
+const id = location.hash.slice(1).replace(/[^A-Z0-9]/g, '');
+const card = document.getElementById('card');
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const fmt = ms => { const d = new Date(ms), p = n => String(n).padStart(2, '0'); return `${d.getFullYear()}/${p(d.getMonth() + 1)}/${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`; };
+const head = x => `<div class="store">${esc(x.store || 'Bread 專業字幕製作')}${x.test ? '<span class="tag">測試</span>' : ''}</div>` +
+  `<h1>${esc(x.item)}</h1><div class="amt"><small>NT$</small>${Number(x.amount || 0).toLocaleString()}</div>`;
+const dl = rows => '<dl>' + rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('') + '</dl>';
+const ask = '<p class="note" style="text-align:left">如需付款，請向 Bread 專業字幕製作索取新的連結。</p>';
+
+function show(x) {
+  if (x.state === 'missing') { card.innerHTML = '<p class="st warn">找不到此付款連結</p><p class="note" style="text-align:left">請確認網址是否完整。</p>'; return; }
+  if (x.state === 'paid') { card.innerHTML = head(x) + '<p class="st ok">付款完成</p>' + dl([['付款時間', fmt(x.paid_at)]].concat(x.trade_no ? [['交易序號', x.trade_no]] : [])); return; }
+  if (x.state === 'void') { card.innerHTML = head(x) + '<p class="st warn">此付款連結已作廢</p>' + ask; return; }
+  if (x.state === 'expired') { card.innerHTML = head(x) + `<p class="st warn">此付款連結已於 ${fmt(x.expires_at)} 到期</p>` + ask; return; }
+  card.innerHTML = head(x) + (x.limit ? '<p class="st warn" style="font-size:14px">付款次數已達上限，請向我們索取新的連結</p>' : '') +
+    dl([['付款方式', '信用卡'], ['連結有效至', fmt(x.expires_at)]]) + '<button id="go" type="button">前往付款</button><p class="note">付款由藍新金流處理</p>';
+  document.getElementById('go').onclick = go;
+}
+async function go() {
+  const b = document.getElementById('go'); if (b) b.disabled = true;
+  try {
+    const r = await fetch(API + '/api/paylinks/public/' + id + '/go', { method: 'POST' });
+    const x = await r.json();
+    if (!x.fields) { show(x); return; }
+    const f = document.createElement('form'); f.method = 'POST'; f.action = x.gateway;
+    for (const [k, v] of Object.entries(x.fields)) { const i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = v; f.append(i); }
+    document.body.append(f); f.submit();
+  } catch (e) { if (b) b.disabled = false; card.insertAdjacentHTML('beforeend', '<p class="note">連線失敗，請再試一次</p>'); }
+}
+(async () => {
+  if (!id) { show({ state: 'missing' }); return; }
+  try {
+    const x = await (await fetch(API + '/api/paylinks/public/' + id)).json();
+    show(x);
+    // 第一次打開就直接前往藍新；付完按「返回商店」回來時已付款，不會再跳
+    if (x.state === 'open' && !x.limit && !sessionStorage.getItem('went_' + id)) { try { sessionStorage.setItem('went_' + id, '1'); } catch (e) { } go(); }
+  } catch (e) { card.innerHTML = '<p class="st warn">無法載入付款資訊</p><p class="note" style="text-align:left">請稍後再試。</p>'; }
+})();
+</script>
+</body>
+</html>
