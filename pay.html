@@ -7,7 +7,8 @@
 <meta name="referrer" content="no-referrer">
 <title>付款－Bread 專業字幕製作</title>
 <!-- 付款連結的客人頁（放在 breadilized/bread-subtitle 的 GitHub Pages）。
-     網址 pay.html#<連結編號>：向後端拿狀態與當下加密的藍新表單，直接送去藍新。後端：Evosub app/routers/paylink.py -->
+     網址 pay.html#<連結編號>：向後端拿狀態與當下加密的藍新表單，直接送去藍新。後端：Evosub app/routers/paylink.py
+     ATM 取過號就顯示帳號、不自動跳藍新（客人之後重開連結要看得到帳號）。 -->
 <style>
 *{box-sizing:border-box}[hidden]{display:none!important}
 :root{--bg:#f5f5f4;--card:#fff;--ink:#18181b;--sub:#71717a;--line:#e4e4e7;--btn:#18181b;--btnink:#fff;--ok:#15803d;--warn:#b45309}
@@ -45,11 +46,14 @@ const ask = '<p class="note" style="text-align:left">如需付款，請向 Bread
 
 function show(x) {
   if (x.state === 'missing') { card.innerHTML = '<p class="st warn">找不到此付款連結</p><p class="note" style="text-align:left">請確認網址是否完整。</p>'; return; }
-  if (x.state === 'paid') { card.innerHTML = head(x) + '<p class="st ok">付款完成</p>' + dl([['付款時間', fmt(x.paid_at)]].concat(x.trade_no ? [['交易序號', x.trade_no]] : [])); return; }
+  if (x.state === 'paid') { card.innerHTML = head(x) + '<p class="st ok">付款完成</p>' + dl([['付款時間', fmt(x.paid_at)]].concat(x.pay_type ? [['付款方式', x.pay_type]] : [], x.trade_no ? [['交易序號', x.trade_no]] : [])); return; }
   if (x.state === 'void') { card.innerHTML = head(x) + '<p class="st warn">此付款連結已作廢</p>' + ask; return; }
   if (x.state === 'expired') { card.innerHTML = head(x) + `<p class="st warn">此付款連結已於 ${fmt(x.expires_at)} 到期</p>` + ask; return; }
+  const a = x.atm;
   card.innerHTML = head(x) + (x.limit ? '<p class="st warn" style="font-size:14px">付款次數已達上限，請向我們索取新的連結</p>' : '') +
-    dl([['付款方式', '信用卡'], ['連結有效至', fmt(x.expires_at)]]) + '<button id="go" type="button">前往付款</button><p class="note">付款由藍新金流處理</p>';
+    (a ? '<p class="st" style="font-size:15px">請轉帳至以下帳號</p>' + dl([['銀行代碼', a.bank], ['轉帳帳號', a.account], ['繳費期限', String(a.expire).slice(0, 16).replace(/-/g, '/')]])
+       : dl([['付款方式', x.methods || '信用卡'], ['連結有效至', fmt(x.expires_at)]])) +
+    `<button id="go" type="button">${a ? '改用其他方式付款' : '前往付款'}</button><p class="note">付款由藍新金流處理</p>`;
   document.getElementById('go').onclick = go;
 }
 async function go() {
@@ -69,7 +73,7 @@ async function go() {
     const x = await (await fetch(API + '/api/paylinks/public/' + id)).json();
     show(x);
     // 第一次打開就直接前往藍新；付完按「返回商店」回來時已付款，不會再跳
-    if (x.state === 'open' && !x.limit && !sessionStorage.getItem('went_' + id)) { try { sessionStorage.setItem('went_' + id, '1'); } catch (e) { } go(); }
+    if (x.state === 'open' && !x.limit && !x.atm && !sessionStorage.getItem('went_' + id)) { try { sessionStorage.setItem('went_' + id, '1'); } catch (e) { } go(); }
   } catch (e) { card.innerHTML = '<p class="st warn">無法載入付款資訊</p><p class="note" style="text-align:left">請稍後再試。</p>'; }
 })();
 </script>
